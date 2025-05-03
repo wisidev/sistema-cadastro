@@ -26,7 +26,7 @@ public class AlunoRepository {
         for (Document doc : collection.find()) {
             System.out.println("ID: " + doc.getInteger("id"));
             System.out.println("Nome: " + doc.getString("nome"));
-            System.out.println("RA: " + doc.getString("ra"));
+            System.out.println("RA: " + doc.getInteger("ra"));
             System.out.println("-----------------------");
         }
     }

@@ -35,7 +35,7 @@ public class MenuAluno {
                     System.out.print("Nome do aluno: ");
                     String nome = scanner.nextLine();
                     System.out.print("RA do aluno: ");
-                    String ra = scanner.nextLine();
+                    int ra = scanner.nextInt();
                     repository.adicionar(new Aluno(id, nome, ra));
                     break;
                 case 2:

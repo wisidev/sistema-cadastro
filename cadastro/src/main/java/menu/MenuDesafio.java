@@ -34,9 +34,15 @@ public class MenuDesafio {
                     scanner.nextLine();
                     System.out.print("Nome do desafio: ");
                     String nome = scanner.nextLine();
-                    System.out.print("Descrição do desafio: ");
-                    String descricao = scanner.nextLine();
-                    repository.adicionar(new Desafio(id, nome, descricao));
+                    System.out.print("Curso: ");
+                    String curso = scanner.nextLine();
+                    System.out.print("Período: ");
+                    String periodo = scanner.nextLine();
+                    System.out.print("Turma: ");
+                    String turma = scanner.nextLine();
+                    System.out.print("Aluno: ");
+                    String aluno = scanner.nextLine();
+                    repository.adicionar(new Desafio(id, nome, curso, periodo, turma, aluno));
                     break;
                 case 2:
                     repository.listar();
@@ -47,9 +53,15 @@ public class MenuDesafio {
                     scanner.nextLine();
                     System.out.print("Novo nome: ");
                     String novoNome = scanner.nextLine();
-                    System.out.print("Nova descrição: ");
-                    String novaDescricao = scanner.nextLine();
-                    repository.atualizar(idAtualizar, novoNome, novaDescricao);
+                    System.out.print("Novo curso: ");
+                    String novoCurso = scanner.nextLine();
+                    System.out.print("Novo período: ");
+                    String novoPeriodo = scanner.nextLine();
+                    System.out.print("Nova turma: ");
+                    String novaTurma = scanner.nextLine();
+                    System.out.print("Novo aluno: ");
+                    String novoAluno = scanner.nextLine();
+                    repository.atualizar(idAtualizar, novoNome, novoCurso, novoPeriodo, novaTurma, novoAluno);
                     break;
                 case 4:
                     System.out.print("ID do desafio a remover: ");

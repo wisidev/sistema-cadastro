@@ -15,8 +15,12 @@ public class DesafioRepository {
     }
 
     public void adicionar(Desafio desafio) {
-        Document doc = new Document("id", desafio.getId()).append("nome", desafio.getNome())
-                .append("descricao", desafio.getDescricao());
+        Document doc = new Document("id", desafio.getId())
+                .append("nome", desafio.getNome())
+                .append("curso", desafio.getCurso())
+                .append("periodo", desafio.getPeriodo())
+                .append("turma", desafio.getTurma())
+                .append("aluno", desafio.getAluno());
         collection.insertOne(doc);
         System.out.println("Desafio cadastrado com sucesso!");
     }
@@ -25,13 +29,22 @@ public class DesafioRepository {
         for (Document doc : collection.find()) {
             System.out.println("ID: " + doc.getInteger("id"));
             System.out.println("Nome: " + doc.getString("nome"));
-            System.out.println("Descrição: " + doc.getString("descricao"));
+            System.out.println("Curso: " + doc.getString("curso"));
+            System.out.println("Período: " + doc.getString("periodo"));
+            System.out.println("Turma: " + doc.getString("turma"));
+            System.out.println("Aluno: " + doc.getString("aluno"));
             System.out.println("-----------------------");
         }
     }
 
-    public void atualizar(int id, String novoNome, String novaDescricao) {
-        collection.updateOne(Filters.eq("id", id), Updates.set("nome", novoNome));
+    public void atualizar(int id, String novoNome, String novoCurso, String novoPeriodo, String novaTurma, String novoAluno) {
+        collection.updateOne(Filters.eq("id", id), Updates.combine(
+            Updates.set("nome", novoNome),
+            Updates.set("curso", novoCurso),
+            Updates.set("periodo", novoPeriodo),
+            Updates.set("turma", novaTurma),
+            Updates.set("aluno", novoAluno)
+        ));
         System.out.println("Desafio atualizado com sucesso!");
     }
 
