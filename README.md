@@ -47,5 +47,5 @@ As entidades cadastradas incluem:
 ## 🎥 Demonstração em Vídeo  
 Um vídeo demonstrando o funcionamento do sistema está disponível no YouTube:
 
-🔗 [Assista no YouTube](https://www.youtube.com/@wisidev)
+🔗 [Assista no YouTube](https://www.youtube.com/watch?v=Bc8vlInBNDU)
 
