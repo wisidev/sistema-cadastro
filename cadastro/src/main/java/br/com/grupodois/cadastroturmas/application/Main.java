@@ -21,10 +21,10 @@ public class Main {
 
             var cursoRepository = new CursoRepository(database);
             var menuCurso = new MenuCurso(scanner, cursoRepository);
-            
+
             var turmaRepository = new TurmaRepository(database);
             var menuTurma = new MenuTurma(scanner, turmaRepository);
-            
+
             var periodoRepository = new PeriodoRepository(database);
             var menuPeriodo = new MenuPeriodo(scanner, periodoRepository);
 
@@ -56,6 +56,13 @@ public class Main {
                     default -> System.out.println("Opção inválida!");
                 }
             } while (opcao != 6);
+
+            // ✅ Fecha a conexão com Redis ao sair
+            alunoRepository.fechar();
+            cursoRepository.fechar();
+            turmaRepository.fechar();
+            periodoRepository.fechar();
+            desafioRepository.fechar();
         }
     }
 }
